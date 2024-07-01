@@ -96,7 +96,7 @@ songComment = ""
 if fileHeader == fileTypes.YM2_3: # Contains no header data, other than "YM3!". Interlaced, with no R14 or R15 data.
     print ("File type is YM2 or YM3")
     print ("WARNING: File lacks clockspeed/framerate data, assuming " + str(framerate) + "Hz sample rate, " + str(chipClockspeed) + "Hz clockspeed")
-    numFrames = (len(data) - 4) / 14
+    numFrames = int((len(data) - 4) / 14)
 elif fileHeader == fileTypes.YM3b: # Same as YM3, but the last 32 bits of the file contain the loop point
     print ("File type is YM3b")
     print ("WARNING: File lacks clockspeed/framerate data, assuming " + str(framerate) + "Hz sample rate, " + str(chipClockspeed) + "Hz clockspeed")
